@@ -1,0 +1,33 @@
+pl = "GET /demo.html/?SSID=GPOW&PASS=Hermans1234&" 
+
+get = string.find(pl,"GET")
+
+if get then
+
+	issid,fssid = string.find(pl,'SSID=')  
+
+	if issid and fssid then
+
+		iamp,famper = string.find(pl,'&')
+		ssid = string.sub(pl,fssid+1,iamp-1)
+
+		if ssid then
+
+		ipass,fpass = string.find(pl,'PASS=')
+		iamp,famper = string.find(pl,'&',famper+1)
+		pass = string.sub(pl,fpass+1,iamp-1)
+
+			if pass then
+
+			print("Ahora podemos empezar a hablar")
+			print(ssid)
+			print(pass)
+                        dofile("cambiaConf.lua")
+
+			end
+
+		end
+
+	end
+
+end

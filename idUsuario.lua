@@ -1,0 +1,2 @@
+idUsuario = ""
+--dofile("main.lua")
